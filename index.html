@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <title>VelvetCore // EREBOS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              serif: ['Cinzel', 'serif'],
+              display: ['Playfair Display', 'serif'],
+            },
+            colors: {
+              background: '#050202', // Midnight abyss
+              surface: '#0a0606',    // Dark chocolate surface
+              'surface-highlight': '#150a0a',
+              primary: '#d91d1d',    // Velvet Red
+              'primary-bright': '#ff3b3b', // Lust Red
+              'glow': 'rgba(217, 29, 29, 0.4)'
+            },
+            boxShadow: {
+              'glow': '0 0 20px rgba(217, 29, 29, 0.15)',
+              'glow-sm': '0 0 10px rgba(217, 29, 29, 0.1)',
+              'glow-lg': '0 0 40px rgba(217, 29, 29, 0.25)',
+              'inner-glow': 'inset 0 0 20px rgba(217, 29, 29, 0.05)',
+            },
+            animation: {
+              'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+              'float': 'float 6s ease-in-out infinite',
+              'modal-enter': 'modalEnter 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+              'fade-in': 'fadeIn 0.5s ease-out forwards',
+              'slide-up-fade': 'slideUpFade 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+            },
+            keyframes: {
+              float: {
+                '0%, 100%': { transform: 'translateY(0)' },
+                '50%': { transform: 'translateY(-10px)' },
+              },
+              modalEnter: {
+                '0%': { opacity: '0', transform: 'scale(0.96) translateY(10px)' },
+                '100%': { opacity: '1', transform: 'scale(1) translateY(0)' },
+              },
+              fadeIn: {
+                '0%': { opacity: '0' },
+                '100%': { opacity: '1' },
+              },
+              slideUpFade: {
+                '0%': { opacity: '0', transform: 'translateY(10px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              }
+            }
+          },
+        },
+      }
+    </script>
+    <style>
+      /* Custom scrollbar for webkit */
+      ::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #030303; 
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #222; 
+        border-radius: 3px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #d91d1d; 
+      }
+      body {
+        background-color: #050202;
+        color: #e5e5e5;
+        font-family: 'Inter', sans-serif;
+      }
+      .font-cinzel {
+        font-family: 'Cinzel', serif;
+      }
+      /* Premium Button Styles */
+      .btn-premium {
+        position: relative;
+        overflow: hidden;
+        transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+        border: 1px solid rgba(217, 29, 29, 0.2);
+        background: linear-gradient(135deg, #2a0505 0%, #050202 100%);
+        box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+      }
+      .btn-premium:hover {
+        border-color: rgba(217, 29, 29, 0.6);
+        box-shadow: 0 0 25px rgba(217, 29, 29, 0.25);
+        transform: translateY(-2px);
+      }
+      .btn-premium::after {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(circle, rgba(217,29,29,0.1) 0%, transparent 70%);
+        opacity: 0;
+        transition: opacity 0.4s;
+      }
+      .btn-premium:hover::after {
+        opacity: 1;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.555.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
